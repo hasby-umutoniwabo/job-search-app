@@ -51,7 +51,7 @@ Per the project requirements, proper attribution is given to the API providers, 
 3. Open `js/config.js` in your editor and add your RapidAPI key:
    ```javascript
    const CONFIG = {
-       API_KEY: 'YOUR_RAPIDAPI_KEY_HERE', // Replace with your actual key
+       API_KEY: '88459c5889msh287ead8ebce95acp1e62fcjsn81bc45bd224e',
        API_HOST: 'jsearch.p.rapidapi.com',
        BASE_URL: 'https://jsearch.p.rapidapi.com'
    };

@@ -1,0 +1,21 @@
+# Environment variables and API keys
+js/config.js
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Backup and temporary files
+*.bak
+*.tmp
+*~

@@ -1,0 +1,5 @@
+const CONFIG = {
+    API_KEY: '88459c5889msh287ead8ebce95acp1e62fcjsn81bc45bd224e', 
+    API_HOST: 'jsearch.p.rapidapi.com',
+    BASE_URL: 'https://jsearch.p.rapidapi.com'
+};

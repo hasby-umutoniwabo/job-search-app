@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Job Search App</h1>
+            <p>Find your dream job using data from JSearch API</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="search-section">
+            <div class="search-container">
+                <div class="search-row">
+                    <div class="search-group">
+                        <label for="job-title">Job Title</label>
+                        <input type="text" id="job-title" placeholder="e.g. Node.js Developer">
+                    </div>
+                    
+                    <div class="search-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="e.g. New York">
+                    </div>
+                    
+                    <div class="search-group">
+                        <label for="experience">Experience Level</label>
+                        <select id="experience">
+                            <option value="ALL">All Levels</option>
+                            <option value="ENTRY_LEVEL">Entry Level</option>
+                            <option value="MID_LEVEL">Mid Level</option>
+                            <option value="SENIOR_LEVEL">Senior Level</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button id="search-btn" type="button">Search Jobs</button>
+            </div>
+        </section>
+
+        <section id="filters-section" class="hidden">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="sort-by">Sort By</label>
+                    <select id="sort-by">
+                        <option value="relevance">Relevance</option>
+                        <option value="date">Date Posted</option>
+                        <option value="salary">Salary</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="employment-type">Employment Type</label>
+                    <select id="employment-type">
+                        <option value="ALL">All Types</option>
+                        <option value="FULLTIME">Full Time</option>
+                        <option value="PARTTIME">Part Time</option>
+                        <option value="CONTRACTOR">Contractor</option>
+                        <option value="INTERN">Internship</option>
+                    </select>
+                </div>
+                
+                <button id="apply-filters" type="button">Apply Filters</button>
+            </div>
+        </section>
+
+        <section id="results-section">
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Searching for jobs...</p>
+            </div>
+            
+            <div id="error-message" class="hidden">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>An error occurred while fetching jobs.</p>
+            </div>
+            
+            <div id="no-results" class="hidden">
+                <i class="fas fa-search"></i>
+                <p>No jobs found matching your criteria. Try adjusting your search.</p>
+            </div>
+            
+            <div id="results-info" class="hidden">
+                <p>Showing <span id="results-count">0</span> jobs</p>
+            </div>
+            
+            <div id="job-listings"></div>
+            
+            <div id="pagination" class="hidden">
+                <button id="prev-page" disabled>Previous</button>
+                <span id="page-info">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+                <button id="next-page">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>This application uses data from the <a href="https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch" target="_blank">JSearch API</a> via RapidAPI.</p>
+            <p>&copy; 2025 Hasby Job Search App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Job Detail Modal -->
+    <div id="job-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="job-detail-content"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

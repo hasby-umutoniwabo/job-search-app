@@ -82,20 +82,20 @@ Repeat the same steps as Web01, but use the `web02.conf` configuration file.
 1. Edit the hosts file on the load balancer to resolve Web01 and Web02:
 
 ```bash
-sudo nano /etc/hosts
+sudo vi /etc/hosts
 ```
 
 Add entries for both web servers:
 
 ```
-192.168.1.101 web01.jobsearch.local  # Replace with actual IP of Web01
-192.168.1.102 web02.jobsearch.local  # Replace with actual IP of Web02
+52.201.233.192 web01.jobsearch.local  # Replace with actual IP of Web01
+98.81.205.252 web02.jobsearch.local  # Replace with actual IP of Web02
 ```
 
 2. Create Nginx load balancer configuration:
 
 ```bash
-sudo nano /etc/nginx/sites-available/job-search-lb
+sudo vi /etc/nginx/sites-available/job-search-lb
 ```
 
 3. Copy and paste the content from `deployment/nginx-config/lb01.conf`.
@@ -145,7 +145,7 @@ sudo tail -f /var/log/nginx/access.log
 On Web01 and Web02, add a unique identifier to verify which server is handling requests:
 
 ```bash
-sudo nano /var/www/job-search-app/index.html
+sudo vi /var/www/job-search-app/index.html
 ```
 
 Add a comment at the bottom of the file identifying each server:

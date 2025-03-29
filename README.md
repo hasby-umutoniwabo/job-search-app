@@ -2,7 +2,7 @@
 
 A professional web application that fetches and displays job listings from the JSearch API. This application helps users find their dream jobs by searching, filtering, and applying to opportunities across multiple job platforms.
 
-![Job Search App Screenshot](screenshots/app-screenshot.png)
+![Job Search App Screenshot](![image](https://github.com/user-attachments/assets/53e6a62d-0ce1-43da-8b2b-129b2ce20fbf))
 
 ## 📋 Features
 

@@ -150,8 +150,11 @@ class UIController {
         jobCard.className = 'job-card';
         jobCard.dataset.jobId = job.job_id;
         
-        // Company logo fallback
-        const companyLogo = job.employer_logo || 'https://via.placeholder.com/30?text=' + job.employer_name.charAt(0);
+        // Create placeholder text from employer name for fallback image
+        const employerInitial = job.employer_name ? job.employer_name.charAt(0) : 'C';
+        
+        // Company logo with local fallback instead of placeholder.com
+        const companyLogo = job.employer_logo || `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' fill='%23${Math.floor(Math.random()*16777215).toString(16)}'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='white'%3E${employerInitial}%3C/text%3E%3C/svg%3E`;
         
         // Format job location
         let location = 'Remote';
@@ -189,7 +192,7 @@ class UIController {
         jobCard.innerHTML = `
             <h3>${job.job_title}</h3>
             <div class="job-company">
-                <img src="${companyLogo}" alt="${job.employer_name}" onerror="this.src='https://via.placeholder.com/30?text=${job.employer_name.charAt(0)}'">
+                <img src="${companyLogo}" alt="${job.employer_name}" onerror="this.style.backgroundColor='#3498db'; this.style.color='white'; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.style.width='30px'; this.style.height='30px'; this.style.borderRadius='50%'; this.textContent='${employerInitial}';">
                 <span>${job.employer_name}</span>
             </div>
             <div class="job-details">
@@ -283,8 +286,11 @@ class UIController {
             return;
         }
         
-        // Company logo fallback
-        const companyLogo = job.employer_logo || 'https://via.placeholder.com/50?text=' + job.employer_name.charAt(0);
+        // Create placeholder text from employer name for fallback image
+        const employerInitial = job.employer_name ? job.employer_name.charAt(0) : 'C';
+        
+        // Company logo with SVG fallback
+        const companyLogo = job.employer_logo || `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Crect width='50' height='50' fill='%23${Math.floor(Math.random()*16777215).toString(16)}'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='white'%3E${employerInitial}%3C/text%3E%3C/svg%3E`;
         
         // Format job location
         let location = 'Remote';
@@ -323,7 +329,7 @@ class UIController {
             <div class="job-detail-header">
                 <h2>${job.job_title}</h2>
                 <div class="job-company">
-                    <img src="${companyLogo}" alt="${job.employer_name}" onerror="this.src='https://via.placeholder.com/50?text=${job.employer_name.charAt(0)}'">
+                    <img src="${companyLogo}" alt="${job.employer_name}" onerror="this.style.backgroundColor='#3498db'; this.style.color='white'; this.style.display='flex'; this.style.alignItems='center'; this.style.justifyContent='center'; this.style.width='50px'; this.style.height='50px'; this.style.borderRadius='50%'; this.textContent='${employerInitial}';">
                     <h3>${job.employer_name}</h3>
                 </div>
             </div>
